@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <title>SOAP APPS</title>
+    <link href="{{ url_for('static', filename='css/materialize.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div id="main"></div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}" type="text/javascript"></script>
+<nav class="green lighten-2" role="navigation">
+    <div class="nav-wrapper container">
+        <a href="" class="brand-logo">SOAP APPS</a>
+        <a data-target="nav-mobile" class="sidenav-trigger button"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<ul id="nav-mobile" class="sidenav">
+    <a href="" class="brand-logo">SOAP APPS</a>
+</ul>
+
+<main>
+   <a href="http://127.0.0.1:7789/?wsdl" target="_blank"><h4>Show SOAP Definition</h4></a>
+   <!-- <form action="http://127.0.0.1:7789/say_hello?times=5&name=Dave" method="GET"> -->
+    <h2>RESULT :</h2>
+    {% for say in data.string %}
+        <h5>{{say}}</h5>
+    {% endfor %}
+
+    <hr>
+    <h2>Original client</h2>
+    <p>{{xml}}</p>
+</main>
+
+</body>
+</html>
